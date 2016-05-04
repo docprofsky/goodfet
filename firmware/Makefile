@@ -15,7 +15,7 @@ JTAG=msp430-jtag
 GCCINC?=
 
 #All of these are ?= in order ot allow overriding.
-GCC?=msp430-gcc -mmcu=$(mcu)
+GCC?=msp430-elf-gcc -mmcu=$(mcu)
 LDFLAGS?=-mmcu=$(mcu) #-Wl,-dT ldscripts/$(mcu).x
 
 CCEXTRA ?=  $(CFLAGS) -D$(mcu) -D$(platform) -Dplatform=$(platform) -Dboard=$(board) $(GCCINC) -I include -I platforms
